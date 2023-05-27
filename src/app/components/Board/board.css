@@ -5,3 +5,10 @@
   border-radius: 50%;
   margin: 0 auto;
 }
+
+.pokemon {
+  height: 80%;
+  width: 80%;
+  background-image: url(/public/images/abra.png);
+  filter: brightness(0);
+}
