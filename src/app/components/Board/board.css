@@ -1,0 +1,7 @@
+.board {
+  height: 80vh;
+  width: 30vw;
+  background-color: rebeccapurple;
+  border-radius: 50%;
+  margin: 0 auto;
+}

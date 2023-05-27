@@ -2,19 +2,16 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function HomePage() {
+export default function ColoursMenu() {
   const navigate = useNavigate();
 
   const pokemonMenu = () => navigate('/pokemon-menu');
-  const animalsMenu = () => navigate('/animals-menu');
-  const coloursMenu = () => navigate('/colours-menu');
+  const homePage = () => navigate('/');
 
   return (
     <>
       <h1>Guessing Game</h1>
       <button onClick={pokemonMenu}>Pokémon</button>
-      <button onClick={animalsMenu}>Animals</button>
-      <button onClick={coloursMenu}>Colours</button>
     </>
   );
 }
