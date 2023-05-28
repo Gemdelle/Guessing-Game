@@ -1,10 +1,56 @@
 import * as React from 'react';
 import './board.css';
 
-export default function Board() {
+const dictionaryLetters = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+];
+
+export default function Board({ pokemonUrl, roundNumber }) {
   return (
     <div className="board">
-      <div className="pokemon"></div>
+      {dictionaryLetters.map((letter, index) => {
+        return (
+          <div
+            key={index}
+            className={
+              'letter-' + letter + (roundNumber == index ? ' active' : '')
+            }
+          >
+            {letter}
+          </div>
+        );
+      })}
+      <div
+        className="pokemon"
+        style={{
+          backgroundImage: `url(${pokemonUrl})`,
+        }}
+      ></div>
     </div>
   );
 }
