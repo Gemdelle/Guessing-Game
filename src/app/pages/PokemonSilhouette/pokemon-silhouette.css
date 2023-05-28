@@ -1,12 +1,48 @@
-.board-container {
-  width: 80vw;
+.container {
+  overflow: hidden;
+  width: 100vw;
   height: 100vh;
-  background-color: pink;
+}
+
+.board-container {
+  width: 100%;
+  height: 100%;
+  background-image: url(/public/images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   align-items: center;
   position: relative;
+  overflow: hidden;
+}
+
+.bar {
+  height: 25vw;
+  width: 12vw;
+  background-image: url(/public/images/bar.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: 2;
+}
+
+.timer {
+  height: 19vw;
+  width: 5vw;
+  background-image: linear-gradient(
+    to right,
+    #2d2525 30%,
+    #552323 50%,
+    #211616 80%
+  );
+  position: absolute;
+  z-index: 1;
+  border-radius: 2vw;
+  border: 0.2vw solid rgb(118, 118, 110);
 }
 
 input {
