@@ -30,21 +30,6 @@
   z-index: 2;
 }
 
-.timer {
-  height: 19vw;
-  width: 5vw;
-  background-image: linear-gradient(
-    to right,
-    #2d2525 30%,
-    #552323 50%,
-    #211616 80%
-  );
-  position: absolute;
-  z-index: 1;
-  border-radius: 2vw;
-  border: 0.2vw solid rgb(118, 118, 110);
-}
-
 input {
   position: absolute;
   bottom: 8vw;

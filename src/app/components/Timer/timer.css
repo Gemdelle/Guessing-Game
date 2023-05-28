@@ -1,29 +1,43 @@
 .progress-bar {
-    width: 100%;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    transition: height 0.5s;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    #2d2525 30%,
+    #552323 50%,
+    #211616 80%
+  );
+  position: absolute;
+  bottom: 0;
+  transition: height 4s;
+  border-radius: 2vw;
 }
 
 .progress-bar-container {
-    height: 26vw;
-    width: 2vw;
-    background-color: lightgray;
-    position: relative;
-    margin: 0 auto
+  height: 19vw;
+  width: 4.5vw;
+  background-image: linear-gradient(
+    to right,
+    #757575 30%,
+    #c5b3b3 50%,
+    #757575 80%
+  );
+  position: relative;
+  margin: 0 auto;
+  border-radius: 2vw;
+  border: 0.2vw solid rgb(118, 118, 110);
 }
 
 .progress-bar-text {
-    position: absolute;
-    bottom: 36%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1vw;
+  color: white;
 }
 
 .timer {
-    position: absolute;
-    top: 25%;
-    left: 50%;
+  position: absolute;
+  top: 30%;
+  left: 47.5%;
 }

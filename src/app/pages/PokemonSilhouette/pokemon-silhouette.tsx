@@ -130,8 +130,8 @@ export default function PokemonSilhouette() {
           duration={currentTimer}
           onTimerReset={onTimerReset}
         />
-        {/*<div className="bar"></div>
-        <div className="timer"></div>*/}
+        <div className="bar"></div>
+        <div className="timer"></div>
         {currentPlayer === 1 ? (
           <input
             style={{ color: 'blue' }}
