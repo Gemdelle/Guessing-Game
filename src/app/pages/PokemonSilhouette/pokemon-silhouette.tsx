@@ -11,7 +11,7 @@ import Timer from 'app/components/Timer/Timer';
 export default function PokemonSilhouette() {
   const [currentPlayer1Round, setCurrentPlayer1Round] = useState(0);
   const [currentPlayer2Round, setCurrentPlayer2Round] = useState(0);
-  const [currentTimer, setCurrentTimer] = useState(20);
+  const [currentTimer, setCurrentTimer] = useState(120);
   const [currentPlayer, setCurrentPlayer] = useState(1);
 
   const [player1InputValue, setPlayer1InputValue] = useState('');

@@ -40,7 +40,6 @@
   border-radius: 50%;
   background-color: rgb(237, 237, 237);
   border: 0.2vw ridge rgb(185, 179, 121);
-  background-image: url(/public/images/letter-ornament.png);
   background-size: 40% 120%;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,112 +52,129 @@
   box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.7);
 }
 
-.letter-detail {
-  height: 2.5vw;
-  width: 2vw;
+.top-letter-ornament {
+  height: 1.2vw;
+  width: 1.2vw;
+  position: absolute;
+  transform: translateY(-1.2vw);
+  background-image: url(/public/images/top-letter-ornament.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.board :nth-child(1) {
+.bottom-letter-ornament {
+  height: 1.2vw;
+  width: 1.2vw;
+  position: absolute;
+  transform: translateY(1.2vw);
+  background-image: url(/public/images/bottom-letter-ornament.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.board div:nth-child(1) {
   transform: translate(2.1vw, -17vw);
 }
 
-.board :nth-child(2) {
+.board div:nth-child(2) {
   transform: translate(6vw, -16vw);
 }
 
-.board :nth-child(3) {
+.board div:nth-child(3) {
   transform: translate(9.7vw, -14vw);
 }
 
-.board :nth-child(4) {
+.board div:nth-child(4) {
   transform: translate(12.8vw, -11.3vw);
 }
 
-.board :nth-child(5) {
+.board div:nth-child(5) {
   transform: translate(15.3vw, -8vw);
 }
 
-.board :nth-child(6) {
+.board div:nth-child(6) {
   transform: translate(16.8vw, -4.2vw);
 }
 
-.board :nth-child(7) {
+.board div:nth-child(7) {
   transform: translate(17.3vw, 0vw);
 }
 
-.board :nth-child(8) {
+.board div:nth-child(8) {
   transform: translate(16.8vw, 4.2vw);
 }
 
-.board :nth-child(9) {
+.board div:nth-child(9) {
   transform: translate(15.3vw, 8vw);
 }
 
-.board :nth-child(10) {
+.board div:nth-child(10) {
   transform: translate(12.8vw, 11.3vw);
 }
 
-.board :nth-child(11) {
+.board div:nth-child(11) {
   transform: translate(9.7vw, 14vw);
 }
 
-.board :nth-child(12) {
+.board div:nth-child(12) {
   transform: translate(6vw, 16vw);
 }
 
-.board :nth-child(13) {
+.board div:nth-child(13) {
   transform: translate(2.1vw, 17vw);
 }
 
-.board :nth-child(14) {
+.board div:nth-child(14) {
   transform: translate(-2.1vw, 17vw);
 }
 
-.board :nth-child(15) {
+.board div:nth-child(15) {
   transform: translate(-6vw, 16vw);
 }
 
-.board :nth-child(16) {
+.board div:nth-child(16) {
   transform: translate(-9.7vw, 14vw);
 }
 
-.board :nth-child(17) {
+.board div:nth-child(17) {
   transform: translate(-12.8vw, 11.3vw);
 }
 
-.board :nth-child(18) {
+.board div:nth-child(18) {
   transform: translate(-15.3vw, 8vw);
 }
 
-.board :nth-child(19) {
+.board div:nth-child(19) {
   transform: translate(-16.8vw, 4.2vw);
 }
 
-.board :nth-child(20) {
+.board div:nth-child(20) {
   transform: translate(-17.3vw, 0vw);
 }
 
-.board :nth-child(21) {
+.board div:nth-child(21) {
   transform: translate(-16.8vw, -4.2vw);
 }
 
-.board :nth-child(22) {
+.board div:nth-child(22) {
   transform: translate(-15.3vw, -8vw);
 }
 
-.board :nth-child(23) {
+.board div:nth-child(23) {
   transform: translate(-12.8vw, -11.3vw);
 }
 
-.board :nth-child(24) {
+.board div:nth-child(24) {
   transform: translate(-9.7vw, -14vw);
 }
 
-.board :nth-child(25) {
+.board div:nth-child(25) {
   transform: translate(-6vw, -16vw);
 }
 
-.board :nth-child(26) {
+.board div:nth-child(26) {
   transform: translate(-2.1vw, -17vw);
 }
 
