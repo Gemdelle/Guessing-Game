@@ -30,7 +30,12 @@ const dictionaryLetters = [
   'Z',
 ];
 
-export default function Board({ pokemonUrl, roundNumber, answerIsWrong }) {
+export default function Board({
+  pokemonUrl,
+  roundNumber,
+  answerIsWrong,
+  isHisTurn,
+}) {
   return (
     <div className="board">
       {dictionaryLetters.map((letter, index) => {
@@ -42,6 +47,7 @@ export default function Board({ pokemonUrl, roundNumber, answerIsWrong }) {
             }
           >
             {letter}
+            {/*<div className='letter-detail'></div> */}
           </div>
         );
       })}
@@ -52,6 +58,7 @@ export default function Board({ pokemonUrl, roundNumber, answerIsWrong }) {
           filter: `brightness(${answerIsWrong ? 1 : 0})`,
         }}
       ></div>
+      {isHisTurn ? <div className="current-turn-signal"></div> : null}
     </div>
   );
 }

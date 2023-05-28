@@ -53,6 +53,11 @@
   box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.7);
 }
 
+.letter-detail {
+  height: 2.5vw;
+  width: 2vw;
+}
+
 .board :nth-child(1) {
   transform: translate(2.1vw, -17vw);
 }
@@ -165,4 +170,13 @@
   align-items: center;
   background-position: center;
   background-size: contain;
+}
+
+.current-turn-signal {
+  background-image: url(/public/images/current-turn.png);
+  height: 80%;
+  width: 80%;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
 }
