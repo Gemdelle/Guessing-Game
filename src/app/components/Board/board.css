@@ -160,7 +160,6 @@
 .pokemon {
   height: 46%;
   width: 46%;
-  /* filter: brightness(0); */
   display: flex;
   justify-content: center;
   align-items: center;
