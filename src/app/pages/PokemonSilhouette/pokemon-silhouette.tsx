@@ -118,13 +118,11 @@ export default function PokemonSilhouette() {
         <Board
           pokemonUrl={'/pokemon/' + player1[currentPlayer1Round] + '.png'}
           answerIsWrong={player1AnsweredCorrectly}
-          roundNumber={currentPlayer1Round}
-        />
+          roundNumber={currentPlayer1Round} isHisTurn={currentPlayer === 1}        />
         <Board
           pokemonUrl={'/pokemon/' + player2[currentPlayer2Round] + '.png'}
           answerIsWrong={player2AnsweredCorrectly}
-          roundNumber={currentPlayer2Round}
-        />
+          roundNumber={currentPlayer2Round} isHisTurn={currentPlayer === 2}        />
         <Timer
           reset={resetTimer}
           duration={currentTimer}
