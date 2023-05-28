@@ -39,12 +39,14 @@ export default function PokemonSilhouette() {
         <Board
           pokemonUrl={'/images/' + player1[currentPlayer1Round] + '.png'}
           roundNumber={currentPlayer1Round}
+          answerIsWrong={undefined}
         />
         <div className="bar"></div>
         <div className="timer"></div>
         <Board
           pokemonUrl={'/images/' + player2[currentPlayer2Round] + '.png'}
           roundNumber={currentPlayer2Round}
+          answerIsWrong={undefined}
         />
         <input type="text"></input>
       </div>

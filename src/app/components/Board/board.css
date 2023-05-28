@@ -38,8 +38,12 @@
 .letter-Y,
 .letter-Z {
   border-radius: 50%;
-  background-color: burlywood;
-  border: 0.2vw ridge brown;
+  background-color: rgb(237, 237, 237);
+  border: 0.2vw ridge rgb(185, 179, 121);
+  background-image: url(/public/images/letter-ornament.png);
+  background-size: 40% 120%;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 2.5vw;
   width: 2vw;
   display: flex;
