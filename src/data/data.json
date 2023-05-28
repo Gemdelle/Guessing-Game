@@ -1,0 +1,30 @@
+{
+  "pokemons": {
+    "a": ["Abra", "Aipom"],
+    "b": ["Beedrill", "Bayleef"],
+    "c": ["Caterpie", "Celebi"],
+    "d": ["Dewgong", "Delibird"],
+    "e": ["Elekid", "Entei"],
+    "f": ["Farfetch'd", "Feraligatr"],
+    "g": ["Gastly", "Girafarig"],
+    "h": ["Haunter", "Heracross"],
+    "i": ["Ivysaur", "Igglybuff"],
+    "j": ["Jigglypuff", "Jumpluff"],
+    "k": ["Kabuto", "Kingdra"],
+    "l": ["Lapras", "Lanturn"],
+    "m": ["Machamp", "Magby"],
+    "n": ["Nidoking", "Noctowl"],
+    "o": ["Oddish", "Octillery"],
+    "p": ["Paras", "Phanpy"],
+    "q": ["Quagsire", "Quilava"],
+    "r": ["Raichu", "Raikou"],
+    "s": ["Sandshrew", "Scizor"],
+    "t": ["Tangela", "Teddiursa"],
+    "u": ["Unown", "Ursaring"],
+    "v": ["Vaporeon", "Venomoth"],
+    "w": ["Weedle", "Wooper"],
+    "x": ["Xatu", "Xerneas"],
+    "y": ["Yanma", "Yanmega"],
+    "z": ["Zapdos", "Zubat"]
+  }
+}

@@ -5,13 +5,15 @@ import { useNavigate } from 'react-router-dom';
 export default function PokemonMenu() {
   const navigate = useNavigate();
 
-  const pokemonMenu = () => navigate('/pokemon-menu');
+  const pokemonSilhouette = () => navigate('/pokemon-silhouette-game');
+  const pokemonSound = () => navigate('/pokemon-sound-game');
   const homePage = () => navigate('/');
 
   return (
     <>
-      <h1>Guessing Game</h1>
-      <button onClick={pokemonMenu}>Pokémon</button>
+      <h1>Pokemon Game</h1>
+      <button onClick={pokemonSilhouette}>Silhouette</button>
+      <button onClick={pokemonSound}>Sound</button>
     </>
   );
 }

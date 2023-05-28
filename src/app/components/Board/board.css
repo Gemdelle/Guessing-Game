@@ -1,14 +1,166 @@
 .board {
-  height: 80vh;
+  height: 60vh;
   width: 30vw;
   background-color: rebeccapurple;
   border-radius: 50%;
   margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter-A,
+.letter-B,
+.letter-C,
+.letter-D,
+.letter-E,
+.letter-F,
+.letter-G,
+.letter-H,
+.letter-I,
+.letter-J,
+.letter-K,
+.letter-L,
+.letter-M,
+.letter-N,
+.letter-O,
+.letter-P,
+.letter-Q,
+.letter-R,
+.letter-S,
+.letter-T,
+.letter-U,
+.letter-V,
+.letter-W,
+.letter-X,
+.letter-Y,
+.letter-Z {
+  border-radius: 50%;
+  background-color: burlywood;
+  height: 2vw;
+  width: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.board :nth-child(1) {
+  transform: rotate(15deg) translate(250px) rotate(-15deg);
+}
+
+.board :nth-child(2) {
+  transform: rotate(45deg) translate(250px) rotate(-45deg);
+}
+
+.board :nth-child(3) {
+  transform: rotate(75deg) translate(250px) rotate(-75deg);
+}
+
+.board :nth-child(4) {
+  transform: rotate(105deg) translate(250px) rotate(-240deg);
+}
+
+.board :nth-child(5) {
+  transform: rotate(135deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(6) {
+  transform: rotate(165deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(7) {
+  transform: rotate(195deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(8) {
+  transform: rotate(225deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(9) {
+  transform: rotate(255deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(10) {
+  transform: rotate(285deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(11) {
+  transform: rotate(315deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(12) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(13) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(14) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(15) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(16) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(17) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(18) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(19) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(20) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(21) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(22) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(23) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(24) {
+  transform: rotate(300deg) translate(250px) rotate(-300deg);
+}
+
+.board :nth-child(25) {
+  transform: rotate(345deg) translate(250px) rotate(-345deg);
+}
+
+.board :nth-child(26) {
+  transform: rotate(345deg) translate(250px) rotate(-345deg);
+}
+
+.board :nth-child(26) {
+  transform: rotate(345deg) translate(250px) rotate(-345deg);
 }
 
 .pokemon {
-  height: 80%;
-  width: 80%;
-  background-image: url(/public/images/abra.png);
+  height: 46%;
+  width: 46%;
   filter: brightness(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: contain;
 }
