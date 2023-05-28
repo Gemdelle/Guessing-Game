@@ -46,8 +46,9 @@ export default function Board({
               'letter-' + letter + (roundNumber == index ? ' active' : '')
             }
           >
-            {letter}
-            {/*<div className='letter-detail'></div> */}
+            <span style={{ position: 'absolute' }}>{letter}</span>
+            <i className="top-letter-ornament"></i>
+            <i className="bottom-letter-ornament"></i>
           </div>
         );
       })}
