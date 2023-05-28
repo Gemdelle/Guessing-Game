@@ -118,11 +118,15 @@ export default function PokemonSilhouette() {
         <Board
           pokemonUrl={'/pokemon/' + player1[currentPlayer1Round] + '.png'}
           answerIsWrong={player1AnsweredCorrectly}
-          roundNumber={currentPlayer1Round} isHisTurn={currentPlayer === 1}        />
+          roundNumber={currentPlayer1Round}
+          isHisTurn={currentPlayer === 1}
+        />
         <Board
           pokemonUrl={'/pokemon/' + player2[currentPlayer2Round] + '.png'}
           answerIsWrong={player2AnsweredCorrectly}
-          roundNumber={currentPlayer2Round} isHisTurn={currentPlayer === 2}        />
+          roundNumber={currentPlayer2Round}
+          isHisTurn={currentPlayer === 2}
+        />
         <Timer
           reset={resetTimer}
           duration={currentTimer}
@@ -131,21 +135,23 @@ export default function PokemonSilhouette() {
         <div className="bar"></div>
         <div className="timer"></div>
         {currentPlayer === 1 ? (
-          <input
-            style={{ color: 'blue' }}
-            value={player1InputValue}
-            type="text"
-            onChange={event => setPlayer1InputValue(event.target.value)}
-            onKeyDown={registerPlayer1Answer}
-          ></input>
+          <div className="input">
+            <input
+              value={player1InputValue}
+              type="text"
+              onChange={event => setPlayer1InputValue(event.target.value)}
+              onKeyDown={registerPlayer1Answer}
+            ></input>
+          </div>
         ) : (
-          <input
-            style={{ color: 'green' }}
-            value={player2InputValue}
-            type="text"
-            onChange={event => setPlayer2InputValue(event.target.value)}
-            onKeyDown={registerPlayer2Answer}
-          ></input>
+          <div className="input">
+            <input
+              value={player2InputValue}
+              type="text"
+              onChange={event => setPlayer2InputValue(event.target.value)}
+              onKeyDown={registerPlayer2Answer}
+            ></input>
+          </div>
         )}
       </div>
     </div>

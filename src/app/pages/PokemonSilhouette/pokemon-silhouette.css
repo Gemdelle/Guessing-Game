@@ -30,8 +30,30 @@
   z-index: 2;
 }
 
-input {
+.input {
+  width: 25vw;
+  height: 8vw;
   position: absolute;
-  bottom: 8vw;
-  right: 34vw;
+  margin: 0 auto;
+  top: 40vw;
+  background-image: url(/public/images/input.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 30%;
+  width: 55%;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border: none;
 }
