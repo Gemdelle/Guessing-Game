@@ -113,11 +113,11 @@ export default function PokemonSilhouette() {
         </div>
       </div> */}
       <div className="board-container">
-        <Board pokemonUrl={"/images/"+player1[currentPlayer1Round]+".png"} answerIsWrong={player1AnsweredCorrectly} roundNumber={currentPlayer1Round} />
-        <Board pokemonUrl={"/images/"+player2[currentPlayer2Round]+".png"} answerIsWrong={player2AnsweredCorrectly} roundNumber={currentPlayer2Round} />
+        <Board pokemonUrl={"/pokemon/"+player1[currentPlayer1Round]+".png"} answerIsWrong={player1AnsweredCorrectly} roundNumber={currentPlayer1Round} />
+        <Board pokemonUrl={"/pokemon/"+player2[currentPlayer2Round]+".png"} answerIsWrong={player2AnsweredCorrectly} roundNumber={currentPlayer2Round} />
         <Timer reset={resetTimer} duration={currentTimer} onTimerReset={onTimerReset} />
-        <div className="bar"></div>
-        <div className="timer"></div>
+        {/*<div className="bar"></div>
+        <div className="timer"></div>*/}
         {currentPlayer === 1 ? (
           <input style={{color:"blue"}} value={player1InputValue} type='text' onChange={(event) => setPlayer1InputValue(event.target.value)} onKeyDown={registerPlayer1Answer}></input>
         ) : (
