@@ -30,7 +30,7 @@ const dictionaryLetters = [
   'Z',
 ];
 
-export default function Board({ pokemonUrl, roundNumber }) {
+export default function Board({ pokemonUrl, roundNumber, answerIsWrong }) {
   return (
     <div className="board">
       {dictionaryLetters.map((letter, index) => {
@@ -49,6 +49,7 @@ export default function Board({ pokemonUrl, roundNumber }) {
         className="pokemon"
         style={{
           backgroundImage: `url(${pokemonUrl})`,
+          filter: `brightness(${answerIsWrong ? 1 : 0})`,
         }}
       ></div>
     </div>
