@@ -38,11 +38,41 @@
 .letter-Y,
 .letter-Z {
   border-radius: 50%;
-  background-color: rgb(237, 237, 237);
-  border: 0.2vw ridge rgb(185, 179, 121);
-  background-size: 40% 120%;
-  background-position: center;
-  background-repeat: no-repeat;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(90, 77, 77) 10%,
+    rgb(190, 155, 155) 40%,
+    rgb(190, 155, 155) 50%,
+    rgb(90, 77, 77) 100%
+  );
+
+  background-image: linear-gradient(
+    to right,
+    rgb(171, 185, 179) 10%,
+    rgb(197, 219, 209) 40%,
+    rgb(197, 219, 209) 50%,
+    rgb(171, 185, 179) 100%
+  );
+
+  background-image: linear-gradient(
+    to right,
+    rgb(200, 200, 192) 10%,
+    rgb(234, 234, 207) 40%,
+    rgb(234, 234, 207) 50%,
+    rgb(200, 200, 192) 100%
+  );
+
+  background-image: linear-gradient(
+    to right,
+    rgb(117, 117, 117) 10%,
+    rgb(159, 159, 159) 40%,
+    rgb(159, 159, 159) 50%,
+    rgb(117, 117, 117) 100%
+  );
+
+  border: 0.3vw double rgb(152, 151, 142);
+
   height: 2.5vw;
   width: 2vw;
   display: flex;
@@ -50,6 +80,17 @@
   align-items: center;
   position: absolute;
   box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.7);
+}
+
+.letter-sparkle {
+  height: 3vw;
+  width: 3vw;
+  top: 0.3vw;
+  background-image: url(/public/giphs/turn.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
 }
 
 .top-letter-ornament {

@@ -49,6 +49,7 @@ export default function Board({
             <span style={{ position: 'absolute' }}>{letter}</span>
             <i className="top-letter-ornament"></i>
             <i className="bottom-letter-ornament"></i>
+            <i className="letter-sparkle"></i>
           </div>
         );
       })}
