@@ -19,6 +19,61 @@
   overflow: hidden;
 }
 
+.board-table {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-name {
+  height: 7.5vw;
+  width: 100%;
+  background-image: url(/public/images/player-name.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 41.5vw;
+  z-index: 2;
+}
+
+.next-question {
+  height: 10vw;
+  width: 10vw;
+  background-image: url(/public/images/next-question.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 4.5vw;
+  transition: all 500ms;
+}
+
+.points {
+  height: 11vw;
+  width: 13vw;
+  background-image: url(/public/images/points.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: 1;
+  bottom: -1.8vw;
+}
+
+.next-question:hover {
+  transform: scale(110%);
+  background-image: url(/public/images/next-question-hover.png);
+}
+
+.board-table button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .bar {
   height: 25vw;
   width: 12vw;

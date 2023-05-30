@@ -115,18 +115,26 @@ export default function PokemonSilhouette() {
         </div>
       </div> */}
       <div className="board-container">
-        <Board
-          pokemonUrl={'/pokemon/' + player1[currentPlayer1Round] + '.png'}
-          answerIsWrong={player1AnsweredCorrectly}
-          roundNumber={currentPlayer1Round}
-          isHisTurn={currentPlayer === 1}
-        />
-        <Board
-          pokemonUrl={'/pokemon/' + player2[currentPlayer2Round] + '.png'}
-          answerIsWrong={player2AnsweredCorrectly}
-          roundNumber={currentPlayer2Round}
-          isHisTurn={currentPlayer === 2}
-        />
+        <div className="board-table">
+          <div className="player-name"></div>
+          <Board
+            pokemonUrl={'/pokemon/' + player1[currentPlayer1Round] + '.png'}
+            answerIsWrong={player1AnsweredCorrectly}
+            roundNumber={currentPlayer1Round}
+            isHisTurn={currentPlayer === 1}
+          />
+          <button className="points"></button>
+        </div>
+        <div className="board-table">
+          <div className="player-name"></div>
+          <Board
+            pokemonUrl={'/pokemon/' + player2[currentPlayer2Round] + '.png'}
+            answerIsWrong={player2AnsweredCorrectly}
+            roundNumber={currentPlayer2Round}
+            isHisTurn={currentPlayer === 2}
+          />
+          <button className="points"></button>
+        </div>
         <Timer
           reset={resetTimer}
           duration={currentTimer}
@@ -134,6 +142,8 @@ export default function PokemonSilhouette() {
         />
         <div className="bar"></div>
         <div className="timer"></div>
+
+        <div className="next-question"></div>
         {currentPlayer === 1 ? (
           <div className="input">
             <input
