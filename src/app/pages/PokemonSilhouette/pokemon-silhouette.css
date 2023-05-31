@@ -65,7 +65,7 @@
 
 .next-question:hover {
   transform: scale(110%);
-  background-image: url(/public/images/next-question-hover.png);
+  background-image: url(/public/images/next-question.png);
 }
 
 .board-table button {

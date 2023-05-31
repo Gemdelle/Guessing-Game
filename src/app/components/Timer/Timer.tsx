@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './timer.css';
 
-const Timer = ({ duration, reset, onTimerReset }) => {
+const Timer = ({ duration, onTimerFinished, forceReset }) => {
   const [timeLeft, setTimeLeft] = useState(duration);
 
   useEffect(() => {
-    if (timeLeft === 0) {
-      onTimerReset();
-      return;
-    }
-    if (reset) {
-      setTimeLeft(duration);
-    }
     const timer = setInterval(() => {
       setTimeLeft(prevTime => prevTime - 1);
     }, 1000);
 
+    if (timeLeft === 0) {
+      setTimeout(() => {
+        setTimeLeft(duration);
+        onTimerFinished();
+      }, 3000);
+      return clearInterval(timer);
+    }
+
+    if (forceReset) {
+      setTimeLeft(duration);
+      return clearInterval(timer);
+    }
+
     return () => clearInterval(timer);
-  }, [timeLeft, reset]);
+  }, [timeLeft, forceReset]);
 
   const fillerStyles = {
     height: `${(timeLeft / duration) * 100}%`,

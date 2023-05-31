@@ -11,13 +11,13 @@ import Timer from 'app/components/Timer/Timer';
 export default function PokemonSilhouette() {
   const [currentPlayer1Round, setCurrentPlayer1Round] = useState(0);
   const [currentPlayer2Round, setCurrentPlayer2Round] = useState(0);
-  const [currentTimer, setCurrentTimer] = useState(120);
+  const [currentTimer, setCurrentTimer] = useState(20);
   const [currentPlayer, setCurrentPlayer] = useState(1);
+
+  const [forceReset, setForceReset] = useState(false);
 
   const [player1InputValue, setPlayer1InputValue] = useState('');
   const [player2InputValue, setPlayer2InputValue] = useState('');
-
-  const [resetTimer, setResetTimer] = useState(false);
 
   const [player1AnsweredCorrectly, setPlayer1AnsweredCorrectly] =
     useState(false);
@@ -41,13 +41,16 @@ export default function PokemonSilhouette() {
       setPlayer1AnsweredCorrectly(true);
       setTimeout(() => {
         setCurrentPlayer1Round(prevRound => prevRound + 1);
-        setCurrentTimer(20);
         setPlayer1AnsweredCorrectly(false);
       }, 1000);
     } else {
       setCurrentPlayer(2);
     }
     resetPlayer1();
+    setForceReset(true);
+    setTimeout(() => {
+      setForceReset(false);
+    }, 0);
   }
 
   function answerGivenByPlayer2(answer) {
@@ -55,13 +58,16 @@ export default function PokemonSilhouette() {
       setPlayer2AnsweredCorrectly(true);
       setTimeout(() => {
         setCurrentPlayer2Round(prevRound => prevRound + 1);
-        setCurrentTimer(20);
         setPlayer2AnsweredCorrectly(false);
       }, 1000);
     } else {
       setCurrentPlayer(1);
     }
     resetPlayer2();
+    setForceReset(true);
+    setTimeout(() => {
+      setForceReset(false);
+    }, 0);
   }
 
   function registerPlayer1Answer(event) {
@@ -78,18 +84,10 @@ export default function PokemonSilhouette() {
 
   function resetPlayer1() {
     setPlayer1InputValue('');
-    setResetTimer(true);
-    setTimeout(() => {
-      setResetTimer(false);
-    }, 0);
   }
 
   function resetPlayer2() {
     setPlayer2InputValue('');
-    setResetTimer(true);
-    setTimeout(() => {
-      setResetTimer(false);
-    }, 0);
   }
 
   function onTimerReset() {
@@ -136,9 +134,9 @@ export default function PokemonSilhouette() {
           <button className="points"></button>
         </div>
         <Timer
-          reset={resetTimer}
           duration={currentTimer}
-          onTimerReset={onTimerReset}
+          forceReset={forceReset}
+          onTimerFinished={onTimerReset}
         />
         <div className="bar"></div>
         <div className="timer"></div>
