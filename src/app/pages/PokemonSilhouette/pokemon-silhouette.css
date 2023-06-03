@@ -35,8 +35,37 @@
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 43.8vw;
   z-index: 2;
+}
+
+.player-name span {
+  margin-bottom: 1.5vw;
+}
+
+.player-1-points,
+.player-2-points {
+  height: 20vw;
+  width: 10vw;
+  position: absolute;
+  top: -0.4vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 20;
+}
+
+.player-1-points {
+  background-image: url(/public/images/score-left.png);
+  margin-left: 70vw;
+}
+
+.player-2-points {
+  background-image: url(/public/images/score-right.png);
+  margin-right: 70vw;
 }
 
 .next-question {

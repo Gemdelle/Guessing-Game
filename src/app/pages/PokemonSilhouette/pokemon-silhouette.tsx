@@ -101,14 +101,14 @@ export default function PokemonSilhouette() {
   }
 
   function registerPlayer1Name(provisoryName) {
-    setPlayer1InputName(provisoryName)
+    setPlayer1InputName(provisoryName);
     if (player1Name !== '' && player2Name !== '') {
       setPlayersLoaded(true);
     }
   }
 
   function registerPlayer2Name(provisoryName) {
-    setPlayer2InputName(provisoryName)
+    setPlayer2InputName(provisoryName);
     if (player1Name !== '' && player2Name !== '') {
       setPlayersLoaded(true);
     }
@@ -126,26 +126,25 @@ export default function PokemonSilhouette() {
     }
   }
 
-
-  function retrievePlayersSection(){
+  function retrievePlayersSection() {
     return (
       <div className="intro">
         <div>
           <span>Player 1:</span>
-          <input 
-          type='text' 
-          placeholder="Insert Name of Player 1" 
-          onChange={event => registerPlayer1Name(event.target.value)}
-          onKeyDown={savePlayer1Name}
+          <input
+            type="text"
+            placeholder="Insert Name of Player 1"
+            onChange={event => registerPlayer1Name(event.target.value)}
+            onKeyDown={savePlayer1Name}
           ></input>
         </div>
         <div>
           <span>Player 2:</span>
-          <input 
-          type='text' 
-          placeholder="Insert Name of Player 2" 
-          onChange={event => registerPlayer2Name(event.target.value)}
-          onKeyDown={savePlayer2Name}
+          <input
+            type="text"
+            placeholder="Insert Name of Player 2"
+            onChange={event => registerPlayer2Name(event.target.value)}
+            onKeyDown={savePlayer2Name}
           ></input>
         </div>
       </div>
@@ -156,24 +155,26 @@ export default function PokemonSilhouette() {
     return (
       <div className="board-container">
         <div className="board-table">
-          <div className="player-name">{player1Name}</div>
+          <div className="player-name">
+            <span>{player1Name}</span>
+          </div>
           <Board
             pokemonUrl={'/pokemon/' + player1[currentPlayer1Round] + '.png'}
             answerIsWrong={player1AnsweredCorrectly}
             roundNumber={currentPlayer1Round}
             isHisTurn={currentPlayer === 1}
           />
-          <button className="points"></button>
         </div>
         <div className="board-table">
-          <div className="player-name">{player2Name}</div>
+          <div className="player-name">
+            <span>{player2Name}</span>
+          </div>
           <Board
             pokemonUrl={'/pokemon/' + player2[currentPlayer2Round] + '.png'}
             answerIsWrong={player2AnsweredCorrectly}
             roundNumber={currentPlayer2Round}
             isHisTurn={currentPlayer === 2}
           />
-          <button className="points"></button>
         </div>
         <Timer
           duration={20}
@@ -182,6 +183,8 @@ export default function PokemonSilhouette() {
         />
         <div className="bar"></div>
         <div className="timer"></div>
+        <div className="player-1-points"></div>
+        <div className="player-2-points"></div>
 
         <div className="next-question"></div>
         {currentPlayer === 1 ? (
@@ -209,7 +212,7 @@ export default function PokemonSilhouette() {
 
   return (
     <div className="container">
-      {playersLoaded ? retrieveBoardSection() : retrievePlayersSection() }
+      {playersLoaded ? retrieveBoardSection() : retrievePlayersSection()}
     </div>
   );
 }
