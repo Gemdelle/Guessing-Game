@@ -223,8 +223,8 @@ export default function PokemonSilhouette() {
         />
         <div className="bar"></div>
         <div className="timer"></div>
-        <div className="player-1-points"></div>
-        <div className="player-2-points"></div>
+        <div className="player-1-points">{playersPoints['1']}</div>
+        <div className="player-2-points">{playersPoints['2']}</div>
 
         <div className="next-question"></div>
         {currentPlayer === 1 ? (
