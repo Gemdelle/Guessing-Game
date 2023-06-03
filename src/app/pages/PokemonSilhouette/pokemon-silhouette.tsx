@@ -11,7 +11,6 @@ import Timer from 'app/components/Timer/Timer';
 export default function PokemonSilhouette() {
   const [currentPlayer1Round, setCurrentPlayer1Round] = useState(0);
   const [currentPlayer2Round, setCurrentPlayer2Round] = useState(0);
-  const [currentTimer, setCurrentTimer] = useState(20);
   const [currentPlayer, setCurrentPlayer] = useState(1);
 
   const [forceReset, setForceReset] = useState(false);
@@ -134,7 +133,7 @@ export default function PokemonSilhouette() {
           <button className="points"></button>
         </div>
         <Timer
-          duration={currentTimer}
+          duration={20}
           forceReset={forceReset}
           onTimerFinished={onTimerReset}
         />
