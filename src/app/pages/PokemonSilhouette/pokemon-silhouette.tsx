@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import Board from 'app/components/Board/board';
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './pokemon-silhouette.css';
 
 import data from '../../../data/data.json';
@@ -9,6 +8,12 @@ import { useState } from 'react';
 import Timer from 'app/components/Timer/Timer';
 
 export default function PokemonSilhouette() {
+  const [playersLoaded, setPlayersLoaded] = useState(false);
+  const [player1Name, setPlayer1Name] = useState('');
+  const [player2Name, setPlayer2Name] = useState('');
+  const [player1InputName, setPlayer1InputName] = useState('');
+  const [player2InputName, setPlayer2InputName] = useState('');
+
   const [currentPlayer1Round, setCurrentPlayer1Round] = useState(0);
   const [currentPlayer2Round, setCurrentPlayer2Round] = useState(0);
   const [currentPlayer, setCurrentPlayer] = useState(1);
@@ -22,10 +27,6 @@ export default function PokemonSilhouette() {
     useState(false);
   const [player2AnsweredCorrectly, setPlayer2AnsweredCorrectly] =
     useState(false);
-
-  const navigate = useNavigate();
-
-  const homePage = () => navigate('/');
 
   const player1 = Object.keys(data.pokemons).map(key => {
     return data.pokemons[key][0];
@@ -90,7 +91,7 @@ export default function PokemonSilhouette() {
   }
 
   function onTimerReset() {
-    if (currentPlayer == 1) {
+    if (currentPlayer === 1) {
       setCurrentPlayer(2);
       resetPlayer1();
     } else {
@@ -99,21 +100,63 @@ export default function PokemonSilhouette() {
     }
   }
 
-  return (
-    <div className="container">
-      {/* <div className="intro">
+  function registerPlayer1Name(provisoryName) {
+    setPlayer1InputName(provisoryName)
+    if (player1Name !== '' && player2Name !== '') {
+      setPlayersLoaded(true);
+    }
+  }
+
+  function registerPlayer2Name(provisoryName) {
+    setPlayer2InputName(provisoryName)
+    if (player1Name !== '' && player2Name !== '') {
+      setPlayersLoaded(true);
+    }
+  }
+
+  function savePlayer1Name(event) {
+    if (event.key === 'Enter') {
+      setPlayer1Name(player1InputName);
+    }
+  }
+
+  function savePlayer2Name(event) {
+    if (event.key === 'Enter') {
+      setPlayer2Name(player2InputName);
+    }
+  }
+
+
+  function retrievePlayersSection(){
+    return (
+      <div className="intro">
         <div>
           <span>Player 1:</span>
-          <input placeholder="Insert Name of Player 1"></input>
+          <input 
+          type='text' 
+          placeholder="Insert Name of Player 1" 
+          onChange={event => registerPlayer1Name(event.target.value)}
+          onKeyDown={savePlayer1Name}
+          ></input>
         </div>
         <div>
           <span>Player 2:</span>
-          <input placeholder="Insert Name of Player 2"></input>
+          <input 
+          type='text' 
+          placeholder="Insert Name of Player 2" 
+          onChange={event => registerPlayer2Name(event.target.value)}
+          onKeyDown={savePlayer2Name}
+          ></input>
         </div>
-      </div> */}
+      </div>
+    );
+  }
+
+  function retrieveBoardSection() {
+    return (
       <div className="board-container">
         <div className="board-table">
-          <div className="player-name"></div>
+          <div className="player-name">{player1Name}</div>
           <Board
             pokemonUrl={'/pokemon/' + player1[currentPlayer1Round] + '.png'}
             answerIsWrong={player1AnsweredCorrectly}
@@ -123,7 +166,7 @@ export default function PokemonSilhouette() {
           <button className="points"></button>
         </div>
         <div className="board-table">
-          <div className="player-name"></div>
+          <div className="player-name">{player2Name}</div>
           <Board
             pokemonUrl={'/pokemon/' + player2[currentPlayer2Round] + '.png'}
             answerIsWrong={player2AnsweredCorrectly}
@@ -161,6 +204,12 @@ export default function PokemonSilhouette() {
           </div>
         )}
       </div>
+    );
+  }
+
+  return (
+    <div className="container">
+      {playersLoaded ? retrieveBoardSection() : retrievePlayersSection() }
     </div>
   );
 }
