@@ -7,16 +7,13 @@ import data from '../../../data/data.json';
 import { useState } from 'react';
 import Timer from 'app/components/Timer/Timer';
 
-
-
-
 export default function PokemonSilhouette() {
   const [playersLoaded, setPlayersLoaded] = useState(false);
   const [player1Name, setPlayer1Name] = useState('');
   const [player2Name, setPlayer2Name] = useState('');
   const [player1InputName, setPlayer1InputName] = useState('');
   const [player2InputName, setPlayer2InputName] = useState('');
-  const [playersPoints, setPlayersPoints] = useState({'1': 0, '2': 0});
+  const [playersPoints, setPlayersPoints] = useState({ '1': 0, '2': 0 });
   const [currentPlayerStreak, setCurrentPlayerStreak] = useState(0);
 
   const [currentPlayer1Round, setCurrentPlayer1Round] = useState(0);
@@ -136,27 +133,35 @@ export default function PokemonSilhouette() {
     }
   }
 
-
   function creditPoints(answerResult) {
-    switch(answerResult) {
+    switch (answerResult) {
       case 'RIGHT':
         setCurrentPlayerStreak(currentPlayerStreak + 1);
         setPlayersPoints({
           ...playersPoints,
-          [currentPlayer]: playersPoints[currentPlayer] + 10 + ((currentPlayerStreak >= 3) ? 10 : 0 )
+          [currentPlayer]:
+            playersPoints[currentPlayer] +
+            10 +
+            (currentPlayerStreak >= 3 ? 10 : 0),
         });
         break;
       case 'WRONG':
         setPlayersPoints({
           ...playersPoints,
-          [currentPlayer]: ((playersPoints[currentPlayer] - 10) >= 0) ? playersPoints[currentPlayer] - 10 : 0
+          [currentPlayer]:
+            playersPoints[currentPlayer] - 10 >= 0
+              ? playersPoints[currentPlayer] - 10
+              : 0,
         });
         setCurrentPlayerStreak(0);
         break;
       case 'END_TIMER':
         setPlayersPoints({
           ...playersPoints,
-          [currentPlayer]: ((playersPoints[currentPlayer] - 5) >= 0) ? playersPoints[currentPlayer] - 5 : 0
+          [currentPlayer]:
+            playersPoints[currentPlayer] - 5 >= 0
+              ? playersPoints[currentPlayer] - 5
+              : 0,
         });
         setCurrentPlayerStreak(0);
         break;
@@ -164,7 +169,6 @@ export default function PokemonSilhouette() {
         setCurrentPlayerStreak(0);
     }
   }
-
 
   function retrievePlayersSection() {
     return (
@@ -221,6 +225,7 @@ export default function PokemonSilhouette() {
           forceReset={forceReset}
           onTimerFinished={onTimerReset}
         />
+        <div className="title"></div>
         <div className="bar"></div>
         <div className="timer"></div>
         <div className="player-1-points"></div>
