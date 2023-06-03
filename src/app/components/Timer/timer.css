@@ -29,7 +29,7 @@
 
 .progress-bar-text {
   position: absolute;
-  bottom: 40%;
+  bottom: 45%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1vw;
@@ -38,6 +38,6 @@
 
 .timer {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 47.5%;
 }
