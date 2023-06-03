@@ -7,12 +7,17 @@ import data from '../../../data/data.json';
 import { useState } from 'react';
 import Timer from 'app/components/Timer/Timer';
 
+
+
+
 export default function PokemonSilhouette() {
   const [playersLoaded, setPlayersLoaded] = useState(false);
   const [player1Name, setPlayer1Name] = useState('');
   const [player2Name, setPlayer2Name] = useState('');
   const [player1InputName, setPlayer1InputName] = useState('');
   const [player2InputName, setPlayer2InputName] = useState('');
+  const [playersPoints, setPlayersPoints] = useState({'1': 0, '2': 0});
+  const [currentPlayerStreak, setCurrentPlayerStreak] = useState(0);
 
   const [currentPlayer1Round, setCurrentPlayer1Round] = useState(0);
   const [currentPlayer2Round, setCurrentPlayer2Round] = useState(0);
@@ -39,11 +44,13 @@ export default function PokemonSilhouette() {
   function answerGivenByPlayer1(answer) {
     if (player1[currentPlayer1Round].toLowerCase() === answer.toLowerCase()) {
       setPlayer1AnsweredCorrectly(true);
+      creditPoints('RIGHT');
       setTimeout(() => {
         setCurrentPlayer1Round(prevRound => prevRound + 1);
         setPlayer1AnsweredCorrectly(false);
       }, 1000);
     } else {
+      creditPoints('WRONG');
       setCurrentPlayer(2);
     }
     resetPlayer1();
@@ -56,11 +63,13 @@ export default function PokemonSilhouette() {
   function answerGivenByPlayer2(answer) {
     if (player2[currentPlayer2Round].toLowerCase() === answer.toLowerCase()) {
       setPlayer2AnsweredCorrectly(true);
+      creditPoints('RIGHT');
       setTimeout(() => {
         setCurrentPlayer2Round(prevRound => prevRound + 1);
         setPlayer2AnsweredCorrectly(false);
       }, 1000);
     } else {
+      creditPoints('WRONG');
       setCurrentPlayer(1);
     }
     resetPlayer2();
@@ -91,6 +100,7 @@ export default function PokemonSilhouette() {
   }
 
   function onTimerReset() {
+    creditPoints('END_TIMER');
     if (currentPlayer === 1) {
       setCurrentPlayer(2);
       resetPlayer1();
@@ -125,6 +135,36 @@ export default function PokemonSilhouette() {
       setPlayer2Name(player2InputName);
     }
   }
+
+
+  function creditPoints(answerResult) {
+    switch(answerResult) {
+      case 'RIGHT':
+        setCurrentPlayerStreak(currentPlayerStreak + 1);
+        setPlayersPoints({
+          ...playersPoints,
+          [currentPlayer]: playersPoints[currentPlayer] + 10 + ((currentPlayerStreak >= 3) ? 10 : 0 )
+        });
+        break;
+      case 'WRONG':
+        setPlayersPoints({
+          ...playersPoints,
+          [currentPlayer]: ((playersPoints[currentPlayer] - 10) >= 0) ? playersPoints[currentPlayer] - 10 : 0
+        });
+        setCurrentPlayerStreak(0);
+        break;
+      case 'END_TIMER':
+        setPlayersPoints({
+          ...playersPoints,
+          [currentPlayer]: ((playersPoints[currentPlayer] - 5) >= 0) ? playersPoints[currentPlayer] - 5 : 0
+        });
+        setCurrentPlayerStreak(0);
+        break;
+      default:
+        setCurrentPlayerStreak(0);
+    }
+  }
+
 
   function retrievePlayersSection() {
     return (
